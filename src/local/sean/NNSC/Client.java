@@ -34,7 +34,7 @@ import javax.swing.*;
 
 public class Client {
 	// Strings;
-	public static String host = "localhost"; // Change for your needs
+	public static String host; // Change for your needs
 	public static ArrayList<String> messages = new ArrayList<String>(); 
 	// Ints;
 	public static int port = 9999; // Change relative to server info
@@ -72,6 +72,12 @@ public class Client {
 		/*
 		 * Initialize the client
 		 */
+		if (args[1] != null)
+		{
+			host = args[1];
+		} else {
+			host = "127.0.0.1";
+		}
 		try {
 			createUI();
 			clientSocket = new Socket(host, port);
@@ -82,6 +88,7 @@ public class Client {
 
 		} catch (IOException e) {
 			e.printStackTrace();
+			return;
 		}
 
 	}
@@ -105,6 +112,9 @@ public class Client {
 					System.out.println("Error");
 				} else if (srv_msg.equalsIgnoreCase("SRV_MSG :EXIT")) {
 					System.out.println("Server going down!");
+				} else if (srv_msg == null)
+				{
+					return;
 				}
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
