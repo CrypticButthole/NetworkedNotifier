@@ -13,6 +13,7 @@ The protocol is a very simple text based protocol.
 It works like this.
 
 Server -> Client
+	
 	* "SRV_MSG :" + type
 
 	Where type can be:
@@ -22,9 +23,10 @@ Server -> Client
 		* EXIT		(Notify the client that the server is going down)
 
 Client -> Server
+	
 	* "CLNT_MSG :" + type
 	* msg
-	
+
 	Where type can be:
 		* add 		(Tell the server that the client is going to add a message. This is followed up by the client sending the 'msg')
 		* echo 		(A simple echo, no real use for this at the moment.)
