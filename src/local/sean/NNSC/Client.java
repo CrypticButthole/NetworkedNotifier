@@ -51,7 +51,7 @@ public class Client {
 		frame = new JFrame("Message Sender");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-		sendMessage = new JButton("AAAA");
+		sendMessage = new JButton("Send");
 
 		textArea = new JTextArea(1, 50);
 		textArea.setEditable(true);
