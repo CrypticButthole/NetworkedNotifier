@@ -24,6 +24,7 @@ Server -> Client
 Client -> Server
 	* "CLNT_MSG :" + type
 	* msg
+	
 	Where type can be:
 		* add 		(Tell the server that the client is going to add a message. This is followed up by the client sending the 'msg')
 		* echo 		(A simple echo, no real use for this at the moment.)
